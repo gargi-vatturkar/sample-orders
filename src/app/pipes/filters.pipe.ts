@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 import { ORDER } from '../app.component';
 
@@ -5,6 +6,8 @@ import { ORDER } from '../app.component';
   name: 'filters'
 })
 export class FiltersPipe implements PipeTransform {
+
+  constructor(private datePipe: DatePipe){}
 
   transform(orderList: ORDER[], searchParam: string, 
     status: string, distribution: string): any[] {
@@ -20,7 +23,7 @@ export class FiltersPipe implements PipeTransform {
         res = res.filter(s => s.custName.toLowerCase().includes(searchParam) || s.date.toLowerCase().includes(searchParam) || 
         s.distribution.toLowerCase().includes(searchParam) || s.price.toString().toLowerCase().includes(searchParam) || 
         s.prodName.toLowerCase().includes(searchParam) || s.refId.toString().toLowerCase().includes(searchParam) || 
-        s.status.toLowerCase().includes(searchParam) );
+        s.status.toLowerCase().includes(searchParam) || this.datePipe.transform(s.date).toLowerCase().includes(searchParam) );
       }
       return res;
   }
