@@ -1,0 +1,97 @@
+<div class="main-wrapper">
+
+  <div class="header">
+    <div class="title">Orders</div>
+    <hr>
+
+    <div class="toolbar">
+      <!-- calc(calc(100% - 235px) /3) -->
+      <div class="filters-wrapper">
+        <div style="position: relative; flex: 0 0 33%;">
+          <input type="text" placeholder="Search by any parameter.." [(ngModel)]="filters.search">
+          <i class="material-icons search-icon">search</i>
+        </div>
+
+        <div style="position: relative; flex: 0 0 33%;">
+          <select name="status" [(ngModel)]="filters.status">
+            <option value="" disabled selected>Status</option>
+            <option *ngFor="let status of statusList">{{status}}</option>
+          </select>
+          <i class="material-icons search-icon">local_offer</i>
+        </div>
+
+        <div style="position: relative; flex: 0 0 33%;">
+          <select name="distribution" [(ngModel)]="filters.dist">
+            <option value="" disabled selected>Distribution</option>
+            <option *ngFor="let dist of distributionList">{{dist}}</option>
+          </select>
+          <i class="material-icons search-icon">place</i>
+        </div>
+      </div>
+
+      <button class="prim-btn" (click)="onClickExport()" [disabled]="this.allSelected.numberSelected==0">
+        <i class="material-icons">file_download</i>
+        Export Order(s)
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="flex-disp">
+
+      <label class="check-cont">
+        All Orders
+        <input type="checkbox" [(ngModel)]="allSelected.checked" (change)="onAllChecked()">
+        <span class="checkmark"></span>
+      </label>
+
+      <div class="sub-title">
+        ( {{allSelected.numberSelected}} orders selected)
+      </div>
+    </div>
+
+    <br>
+
+    <table>
+
+      <tr>
+        <th style="width: 54px;">&nbsp;</th>
+        <th style="width: 100px;">Ref. ID</th>
+        <th style="width: 13%;">Customer</th>
+        <th style="width: calc(29% - 154px);">Product(s)</th>
+        <th style="width: 13%;">Date</th>
+        <th style="width: 15%;">Distribution</th>
+        <th style="width: 15%;">Status</th>
+        <th style="width: 15%;">Price</th>
+      </tr>
+
+      <tr *ngFor="let order of orderList | filters : filters.search : filters.status : filters.dist">
+
+        <td>
+          <label class="check-cont">
+            <input type="checkbox" (change)="onChecked()" [(ngModel)]="order.selected">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+
+        <td>{{order.refId}}</td>
+        <td>{{order.custName}}</td>
+        <td>{{order.prodName}}</td>
+        <td>{{order.date | date : 'mediumDate'}}</td>
+        <td>{{order.distribution}}</td>
+        <td>{{order.status}}</td>
+        <td>{{order.price}}</td>
+      </tr>
+
+      <tr *ngIf="(orderList | filters : filters.search : filters.status : filters.dist).length == 0">
+        <td colspan="8">No values found</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>

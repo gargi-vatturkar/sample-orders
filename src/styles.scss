@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~material-design-icons/iconfont/material-icons.css';
+
+*{
+    font-family: 'Poppins';
+}
+
+body{
+    margin: 0!important;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(assets/fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url(assets/fonts/Poppins-Medium.ttf) format("truetype");
+}

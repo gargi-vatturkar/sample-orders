@@ -1,0 +1,65 @@
+[
+    {
+        "refId": 231,
+        "custName": "Souptik C",
+        "prodName": "Orbea Orco M30",
+        "date": "08/08/2020",
+        "distribution": "Bangalore",
+        "status": "In Transit",
+        "price": 800
+    },
+    {
+        "refId": 455,
+        "custName": "Anagha P",
+        "prodName": "Pinarello Gan Disk (x2)",
+        "date": "08/06/2020",
+        "distribution": "Hyderabad",
+        "status": "In Transit",
+        "price": 900
+    },
+    {
+        "refId": 121,
+        "custName": "Suranjana G",
+        "prodName": "S Works Tarmac SL7",
+        "date": "08/12/2020",
+        "distribution": "Patna",
+        "status": "Out for Delivery",
+        "price": 300
+    },
+    {
+        "refId": 424,
+        "custName": "Nithin S",
+        "prodName": "Elite P (x4)",
+        "date": "08/07/2020",
+        "distribution": "Bangalore",
+        "status": "In Transit",
+        "price": 1100
+    },
+    {
+        "refId": 877,
+        "custName": "Alpit Anand",
+        "prodName": "Felt Sport E 50 (x3)",
+        "date": "09/12/2020",
+        "distribution": "Hyderabad",
+        "status": "Placed",
+        "price": 600
+    },
+    {
+        "refId": 235,
+        "custName": "Rohina M",
+        "prodName": "BH Atom 29 (x5)",
+        "date": "07/30/2020",
+        "distribution": "Patna",
+        "status": "Delivered",
+        "price": 1250
+    },
+    {
+        "refId": 837,
+        "custName": "Pratha Pratim",
+        "prodName": "HJC Atara",
+        "date": "08/08/2020",
+        "distribution": "Bangalore",
+        "status": "Out for Delivery",
+        "price": 850
+    }
+]

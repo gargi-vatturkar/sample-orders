@@ -1,0 +1,176 @@
+.main-wrapper{
+    .header{
+        padding: 2vw;
+        background: #E5E5E5;
+
+        .title{
+            font-size: 24px;
+            font-family: 'Poppins-Medium'!important;
+        }
+    }
+
+    .toolbar{
+        margin-top: 16px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+
+        @media(max-width: 1024px){ display: block; }
+
+        .filters-wrapper{
+            width: calc(100% - 30vw);
+            gap: 16px;
+            display: flex;
+            align-content: center;
+
+            @media(max-width: 1024px) { width: calc(100% - 32px); }
+            @media(max-width: 540px) { display: grid; }
+        }
+
+        input[type="text"]{
+            height: 48px;
+            border: 2px solid #DDDDDD;
+
+            padding: 0 12px 0 40px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        select{
+            height: 48px;
+            border: 2px solid #DDDDDD;
+
+            padding: 0 0 0 40px;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .search-icon{ 
+            position: absolute; 
+            color: #FF6B6B; 
+            font-size: 28px;
+            top: 10px; left: 8px;
+        }
+
+        input:focus, select:focus{ outline: none; }
+        input, select{ border-radius: 10px; }
+    }
+
+    .prim-btn{
+        cursor: pointer;
+        background: #17C3B2;
+        padding: 10px 32px;
+        border-radius: 24px;
+        font-size: 18px;
+        border: none;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @media(max-width: 1024px){ margin: 20px 0 8px; }
+    }
+
+    .prim-btn:disabled{
+        color: #6C6C6C;
+        background-color: #cacaca;
+        cursor: not-allowed;
+    }
+
+    .container{
+        padding: 2vw;
+
+        ::ng-deep { color: #6C6C6C; font-size: 18px; }
+    }
+
+    .sub-title{ color: #17C3B2!important; }
+
+    .check-cont {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      .check-cont input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      .checkmark {
+        border-radius: 4px;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        border: 2px solid #FF6B6B;
+        box-sizing: border-box;
+      }
+      
+      .check-cont input:checked ~ .checkmark {
+        background-color: #FF6B6B;
+      }
+      
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      .check-cont input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      .check-cont .checkmark:after {
+        left: 4px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      .flex-disp{
+          display: flex;
+          align-items: center;
+          gap: 12px;
+      }
+
+      table { 
+          border-spacing: 0!important; 
+
+          th:first-of-type { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+          th:last-of-type { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+          th{ background: #F4F4F4; text-align: left!important; }
+
+          th, td{ height: 64px; padding: 0 16px; }
+
+          .check-cont{ margin: -16px 0 0 8px; }
+
+          tr:nth-of-type(2n) { background: #fff; }
+
+          tr:nth-of-type(2n+1) { 
+              background: #f4f4f4;
+
+              td:first-of-type { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+              td:last-of-type { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+            }
+        }
+     
+}
